@@ -1,0 +1,27 @@
+package com.revature.util;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class RequestViewHelper {
+
+	public static String process(HttpServletRequest request) {
+		// Uses a switch flow control to determine which partial to return based on what client is requesting from the servlet
+		switch(request.getRequestURI()) {
+		case "/ERS-Project_1/welcome_page.view":
+			return "partials/welcome_page.html";
+		case "/ERS-Project_1/login.view":
+			return "partials/login.html";
+		case "/ERS-Project_1/create_account.view":
+			return "partials/create_account.html";
+		case "/ERS-Project_1/admin_login.view":
+			return "partials/admin_login.html";
+		case "/ERS-Project_1/user_login.view":
+			return "partials/user_login.html";
+		case "/ERS-Project_1/new_ticket.view":
+			return "partials/new_ticket.html";
+			default: 
+				return null;
+			
+		}
+	}
+}

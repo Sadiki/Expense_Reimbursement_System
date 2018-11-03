@@ -1,0 +1,53 @@
+//package com.revature.DAO;
+//
+//import static org.junit.Assert.assertNotNull;
+//import static org.junit.Assert.assertTrue;
+//
+//import org.junit.jupiter.api.Test;
+//
+//import com.revature.models.Users;
+//
+//public class DAOTest {
+//	
+//	ReimbursementDAOImpl reimDaoImp = new ReimbursementDAOImpl();
+//	UsersDAOImpl userDaoImp = new UsersDAOImpl();
+//	Users user = new Users();
+//	
+//	
+////	@Test
+////	void LoginNotNull() {
+////		assertNotNull("Login is successful",userDaoImp.Login("Gingerbread", "Man"));
+////	}
+//	
+//	@Test
+//	void addUserSuccess() {
+//		assertTrue("User successfully added", userDaoImp.addUser(user));
+//	}
+//	
+////	@Test
+////	void getUserSuccess() {
+////		user.setUsername("Gingerbread");
+////		user.setPassword("Man");
+////		user.setEmail("Ginger@gmail.com");
+////		user.setFirstname("Ginger");
+////		user.setLastname("Bread");
+////		user.setRole_id(1);
+////		
+////		assertTrue("User Exists!", userDaoImp.userExists(user.getUsername()));
+////	}
+//	
+//	@Test
+//	void viewAllTicketsNotNull() {
+//		assertNotNull("Tickets can be viewed", reimDaoImp.getAllTickets());
+//	}
+//	
+//	@Test
+//	void addNewTicketNotNull() {
+//		assertNotNull("Ticket is added", reimDaoImp.addNewTicket(0, "Stuff", 1, 1));
+//	}
+//	
+//	@Test
+//	void getTicketStatusRequest() {
+//		assertNotNull("Ticket is retrieved", reimDaoImp.getTicketStatus(1));
+//	}
+//}

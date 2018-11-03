@@ -1,0 +1,58 @@
+package com.revature.util;
+
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.services.UserService;
+
+public class ValidationHelper {
+
+	public static String process(HttpServletRequest request) throws IOException{
+		UserService userService = new UserService();
+		ObjectMapper mapper = new ObjectMapper();
+		
+		
+		switch(request.getRequestURI()) {
+		case "/ERS-Project_1/username.validate":
+			String username = mapper.readValue(request.getInputStream(), String.class);
+		
+			if(userService.isUsernameAvaliable(username)) {
+				return username;
+			}else
+			{
+				return null;
+			}
+		case "/ERS-Project_1/email.validate":
+			String email = mapper.readValue(request.getInputStream(), String.class);
+			if(userService.isEmailAvaliable(email)) {
+				return email;
+			}else
+			{
+				return null;
+			}
+		case "/ERS-Project_1/name.validate":
+			String name = mapper.readValue(request.getInputStream(), String.class);
+			String[] nameArr = name.split(" ");
+			
+			// Checks if firstname and last name includes any special characters or numbers.
+			Pattern pattern = Pattern.compile("[a-zA-Z]*");
+			
+			// Tries to see if the first name and last name matches with any of the values entered in the pattern.
+			Matcher firstNameMatcher = pattern.matcher(nameArr[0]);
+			Matcher lastNameMatcher = pattern.matcher(nameArr[1]);
+			
+			if(firstNameMatcher.matches() && nameArr[0].length() < 100 && !(nameArr[0].contains(" ")) && lastNameMatcher.matches() && !(nameArr[1].contains(" ")) && nameArr[1].length() < 100) {
+				return name;
+			}else
+			{
+				return null;
+			}
+			
+		default: return null;
+		}
+	}
+}

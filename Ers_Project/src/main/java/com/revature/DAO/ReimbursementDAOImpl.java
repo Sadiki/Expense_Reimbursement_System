@@ -1,0 +1,218 @@
+package com.revature.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.revature.models.Reimbursement;
+import com.revature.util.ConnectionFactory;
+
+public class ReimbursementDAOImpl implements ReimbursementDAO {
+
+	@Override
+	public ArrayList<Reimbursement> getAllTickets() {
+		// Create an empty ArrayList to hold the returned accounts
+		ArrayList<Reimbursement> reimbursements = new ArrayList<>();
+
+		// Open a connection to the account database
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+
+			// Storing SQL query string to get all accounts
+			String sql = "SELECT * FROM ers_reimbursement";
+
+			// Get a statement object from connection object
+			Statement stmt = conn.createStatement();
+
+			// Execute the sql command and get resultset of accounts
+			ResultSet rs = stmt.executeQuery(sql);
+
+			// Loop through the resultset of accounts
+			while (rs.next()) {
+				// Store account in a local account obj
+				Reimbursement reim = new Reimbursement();
+				// Grab the id, amount, submitted, resolved, description, author, resolver,
+				// status_id, type_id from the database and store it into local reimbusement obj
+				reim.setId(rs.getInt(1));
+				reim.setAmount(rs.getInt(2));
+				reim.setSubmitted(rs.getString(3));
+				reim.setResolved(rs.getString(4));
+				reim.setDesc(rs.getString(5));
+				reim.setAuthor_id(rs.getInt(6));
+				reim.setResolver_id(rs.getInt(7));
+				reim.setStatus_id(rs.getInt(8));
+				reim.setType_id(rs.getInt(9));
+
+				// Add it to arraylist of reimbursement objs
+				reimbursements.add(reim);
+			}
+		} catch (SQLException se) {
+			se.printStackTrace();
+		}
+
+		// Return arraylist of account objs
+		return reimbursements;
+	}
+
+	@Override
+	public boolean addNewTicket(double amount, String description, int statusId, int typeId, int userId) {
+		Reimbursement reimbursements = new Reimbursement();
+
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+
+			conn.setAutoCommit(false);
+
+			String sql = "INSERT INTO ers_reimbursement (reimb_amount, reimb_description, reimb_status_id, reimb_type_id, author_id) VALUES (?,?,?,?)";
+
+			// Create a single element array that will hold column name
+			String[] id = new String[1];
+			id[0] = "reimb_id";
+
+			// Get the PreparedStatement object from the connection and generate an account
+			// id
+			PreparedStatement pstmt = conn.prepareStatement(sql, id);
+
+			pstmt.setDouble(1, amount);
+			pstmt.setString(2, description);
+			pstmt.setInt(3, statusId);
+			pstmt.setInt(4, typeId);
+			pstmt.setInt(5, userId);
+
+			// Get number of rows that have been inserted and execute the sql statement
+			int rowInserted = pstmt.executeUpdate();
+
+			// Get resultset
+			ResultSet rs = pstmt.getGeneratedKeys();
+
+			if (rowInserted != 0 || rs != null) {
+				conn.commit();
+				return true;
+
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+
+		return false;
+	}
+
+	@Override
+	public ArrayList<Reimbursement> getTicketStatus(int statusId) {
+
+		ArrayList<Reimbursement> reimbursements = new ArrayList<>();
+
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+
+			conn.setAutoCommit(false);
+
+			String sql = "SELECT * FROM ers_reimbursement WHERE reimb_status_id = ?";
+
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, statusId);
+
+			// Execute the query and retrieve the resultset
+			ResultSet rs = pstmt.executeQuery();
+
+			// Loop through the resultset of accounts
+			while (rs.next()) {
+				// Store account in a local account obj
+				Reimbursement reim = new Reimbursement();
+				// Grab the id, amount, submitted, resolved, description, author, resolver,
+				// status_id, type_id from the database and store it into local reimbusement obj
+				reim.setId(rs.getInt(1));
+				reim.setAmount(rs.getInt(2));
+				reim.setSubmitted(rs.getString(3));
+				reim.setResolved(rs.getString(4));
+				reim.setDesc(rs.getString(5));
+				reim.setAuthor_id(rs.getInt(6));
+				reim.setResolver_id(rs.getInt(7));
+				reim.setStatus_id(rs.getInt(8));
+				reim.setType_id(rs.getInt(9));
+
+				// Add it to arraylist of reimbursement objs
+				reimbursements.add(reim);
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+
+		return reimbursements;
+	}
+
+	@Override
+	public boolean updateTicketStatus(int userId, int statusId, int ticketId) {
+
+		// Open a connection to the account database
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+
+			// Storing SQL query string to get all accounts
+			String sql = "UPDATE ers_reimbursement SET reimb_resolver = ?, reimb_status_id = ? WHERE reimb_id = ?";
+
+			// Get a prepared statement object from connection object
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, userId);
+			pstmt.setInt(2, statusId);
+			pstmt.setInt(3, ticketId);
+
+			// Execute the sql command and get resultset of accounts
+			ResultSet rs = pstmt.executeQuery(sql);
+
+			if (rs != null) {
+				return true;
+			}
+		} catch (SQLException se) {
+			se.printStackTrace();
+		}
+
+		// Return arraylist of account objs
+		return false;
+	}
+
+	@Override
+	public ArrayList<Reimbursement> getUserTickets(int userId) {
+		ArrayList<Reimbursement> reimbursements = new ArrayList<>();
+
+		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+
+			conn.setAutoCommit(false);
+
+			String sql = "SELECT * FROM ers_reimbursement WHERE reimb_submitted = ?";
+
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, userId);
+
+			// Execute the query and retrieve the resultset
+			ResultSet rs = pstmt.executeQuery();
+
+			// Loop through the resultset of accounts
+			while (rs.next()) {
+				// Store account in a local account obj
+				Reimbursement reim = new Reimbursement();
+				// Grab the id, amount, submitted, resolved, description, author, resolver,
+				// status_id, type_id from the database and store it into local reimbusement obj
+				reim.setId(rs.getInt(1));
+				reim.setAmount(rs.getInt(2));
+				reim.setSubmitted(rs.getString(3));
+				reim.setResolved(rs.getString(4));
+				reim.setDesc(rs.getString(5));
+				reim.setAuthor_id(rs.getInt(6));
+				reim.setResolver_id(rs.getInt(7));
+				reim.setStatus_id(rs.getInt(8));
+				reim.setType_id(rs.getInt(9));
+
+				// Add it to arraylist of reimbursement objs
+				reimbursements.add(reim);
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+
+		return reimbursements;
+	}
+
+}
