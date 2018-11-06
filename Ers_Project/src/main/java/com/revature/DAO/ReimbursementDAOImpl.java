@@ -64,7 +64,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 
 			conn.setAutoCommit(false);
 
-			String sql = "INSERT INTO ers_reimbursement (reimb_amount, reimb_description, reimb_status_id, reimb_type_id, author_id) VALUES (?,?,?,?)";
+			String sql = "INSERT INTO ers_reimbursement (reimb_amount, reimb_description, reimb_status_id, reimb_type_id, reimb_author) VALUES (?,?,?,?,?)";
 
 			// Create a single element array that will hold column name
 			String[] id = new String[1];

@@ -19,6 +19,10 @@ public class RequestViewHelper {
 			return "partials/user_login.html";
 		case "/Ers_Project/new_ticket.view":
 			return "partials/new_ticket.html";
+		case "/Ers_Project/nav_login.view":
+			return "partials/nav_login.html";
+		case "/Ers_Project/nav_loggedIn.view":
+			return "partials/nav_loggedIn.html";
 			default: 
 				return null;
 			

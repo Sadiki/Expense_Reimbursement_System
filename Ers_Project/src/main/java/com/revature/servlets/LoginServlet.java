@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.models.Users;
@@ -28,11 +29,16 @@ public class LoginServlet extends HttpServlet {
 		String username = userCreds[0];
 		String password = userCreds[1];
 		
-		Users authUser = userService.Login(username, password);
+		Users currUser = userService.Login(username, password);
+		
+//		// Creates a session which will keep track on whether the user has already logged in or not.
+//		HttpSession session = request.getSession();
+//		// Sets the session id of the user as a cookie.
+//		session.setAttribute("user", currUser);
 		
 		PrintWriter pw = response.getWriter();
 		response.setContentType("application/json");
-		String authUserJSON = mapper.writeValueAsString(authUser);
+		String authUserJSON = mapper.writeValueAsString(currUser);
 		pw.write(authUserJSON);
 	}
 }
