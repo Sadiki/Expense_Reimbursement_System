@@ -1,0 +1,16 @@
+<div id='viewContainer'>
+	<div id='loginMenu'>
+		<form>
+			<h1>Enter credentials</h1>
+			Username: <input id='username' class='register' type='text'>
+			<br />
+			<br />
+			Password: <input id='password' class='register'
+				type='password'>
+		</form>
+		<br />
+		<button id='loginBtn' class= 'menuBtns'>Login</button>
+
+		<div class="alert alert-danger" id="login_err"></div>
+	</div>
+</div>

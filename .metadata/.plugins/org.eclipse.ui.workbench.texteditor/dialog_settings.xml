@@ -2,19 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="nav_loggedIn" key="selection"/>
+		<item value="ticketT" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="nav_loggedIn"/>
-			<item value="select"/>
-			<item value="&#x09;&#x09;&lt;/table&gt;"/>
-			<item value=".getItem"/>
-			<item value="Admin"/>
-			<item value="Admin&apos;"/>
-			<item value="approveTicket"/>
+			<item value="ticketT"/>
+			<item value="ticketTable"/>
+			<item value="full name"/>
+			<item value="valid"/>
+			<item value="firstname"/>
+			<item value="lastname"/>
+			<item value="Please enter"/>
+			<item value="email is"/>
+			<item value="email"/>
+			<item value="ValidatedName"/>
+			<item value="invalid C"/>
+			<item value="invalid"/>
+			<item value="validateUsername"/>
+			<item value="validatedUsername"/>
+			<item value="innerText"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -23,7 +31,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="1637" key="DIALOG_X_ORIGIN"/>
-		<item value="256" key="DIALOG_Y_ORIGIN"/>
+		<item value="1558" key="DIALOG_X_ORIGIN"/>
+		<item value="271" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

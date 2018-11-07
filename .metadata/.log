@@ -6358,3 +6358,736 @@ java.lang.Exception
 !MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
 	Ers_Project[*]: {CONTENT}
 		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 21:32:42.365
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 21:34:56.658
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CHILDREN}
+		src/main/java[*]: {CHILDREN}
+			com.revature.servlets[*]: {CHILDREN}
+				[Working copy] GetAllTicketsServlet.java[*]: {PRIMARY WORKING COPY}]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 21:40:00.049
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CHILDREN | CONTENT}
+		src/main/java[*]: {CHILDREN}
+			com.revature.servlets[*]: {CHILDREN}
+				[Working copy] GetAllTicketsServlet.java[*]: {CONTENT | FINE GRAINED | PRIMARY RESOURCE}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 21:40:00.814
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]
+		ResourceDelta(/Ers_Project/target)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 21:42:06.602
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 21:43:14.048
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:16:26.633
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:20:27.560
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:20:56.975
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CHILDREN | CONTENT}
+		src/main/java[*]: {CHILDREN}
+			com.revature.servlets[*]: {CHILDREN}
+				[Working copy] GetAllTicketsServlet.java[*]: {PRIMARY RESOURCE}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:20:57.100
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/target)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:20:57.751
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CHILDREN}
+		src/main/java[*]: {CHILDREN}
+			com.revature.servlets[*]: {CHILDREN}
+				GetAllTicketsServlet.java[*]: {PRIMARY WORKING COPY}]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:21:12.549
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:28:08.790
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:28:52.321
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:33:42.609
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:34:29.235
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 22:54:13.142
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:00:57.826
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:01:55.715
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:02:01.181
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:03:12.968
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:04:01.916
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:04:34.408
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:04:38.412
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:04:44.333
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:05:00.465
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:05:23.515
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:06:37.166
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:06:40.368
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:06:42.191
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:07:17.783
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:07:30.485
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:07:35.869
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:07:45.321
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:08:09.412
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:08:18.602
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:09:35.417
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:09:55.719
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:10:19.347
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:10:23.231
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:12:15.658
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:12:46.891
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:13:07.522
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:13:16.560
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:13:29.539
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:14:02.211
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:14:45.334
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:15:29.821
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:15:32.833
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:16:07.739
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:16:35.712
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:16:39.793
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:16:55.059
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:17:50.880
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:18:02.559
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:18:33.260
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:19:12.580
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:19:21.354
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:20:05.474
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:20:22.137
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:20:53.538
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:20:58.140
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:21:15.569
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:21:21.068
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:21:36.091
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:21:39.517
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:22:12.863
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:22:16.326
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:25:39.047
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:25:46.899
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:25:52.865
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:26:56.665
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:27:03.357
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:27:27.160
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:27:38.557
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:27:46.365
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:28:15.463
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:28:35.774
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:28:54.564
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:31:39.176
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:31:56.207
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:32:37.976
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:33:56.181
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:34:20.346
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:34:44.469
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:36:16.639
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:36:18.018
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:36:23.036
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:36:28.662
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:37:44.205
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:38:12.242
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:41:32.843
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:41:50.230
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:42:07.636
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:42:11.563
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:42:18.886
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:42:23.837
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:42:33.887
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:42:47.238
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:42:50.410
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:43:19.999
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:43:37.170
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:43:48.731
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:43:56.421
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:43:58.912
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:44:04.742
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:46:56.436
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:47:01.399
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:47:09.202
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:47:33.515
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:47:38.486
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:47:51.327
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:48:06.959
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:48:35.616
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:49:20.177
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:49:35.978
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:49:47.406
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:49:49.850
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:50:34.308
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:51:14.205
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CHILDREN}
+		src/main/java[*]: {CHILDREN}
+			com.revature.DAO[*]: {CHILDREN}
+				[Working copy] UsersDAO.java[*]: {PRIMARY WORKING COPY}]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:54:32.394
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:56:38.404
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:56:42.001
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CHILDREN}
+		src/main/java[*]: {CHILDREN}
+			com.revature.DAO[*]: {CHILDREN}
+				UsersDAO.java[*]: {PRIMARY WORKING COPY}]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:56:50.953
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:57:49.138
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:58:31.205
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CHILDREN}
+		src/main/java[*]: {CHILDREN}
+			com.revature.util[*]: {CHILDREN}
+				ValidationHelper.java[*]: {PRIMARY WORKING COPY}]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:59:07.170
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-06 23:59:30.467
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:01:08.559
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:01:16.330
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:01:57.318
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:02:50.991
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:03:19.795
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:03:52.128
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:04:14.596
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:04:38.216
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:04:53.276
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:05:16.750
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CONTENT}
+		ResourceDelta(/Ers_Project/src)[*]]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:06:00.314
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CHILDREN}
+		src/main/java[*]: {CHILDREN}
+			com.revature.DAO[*]: {CHILDREN}
+				ReimbursementDAOImpl.java[*]: {PRIMARY WORKING COPY}]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:06:00.361
+!MESSAGE changeEvent = org.eclipse.jdt.core.ElementChangedEvent[source=Java Model[*]: {CHILDREN}
+	Ers_Project[*]: {CHILDREN}
+		src/main/java[*]: {CHILDREN}
+			com.revature.servlets[*]: {CHILDREN}
+				AddNewTicketServlet.java[*]: {PRIMARY WORKING COPY}]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:06:00.361
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sAIgOPJO
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:06:00.377
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.sAIgOPJO
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:06:00.383
+!MESSAGE subsribers = null
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2018-11-07 00:06:00.383
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sAIgOPJO => OK

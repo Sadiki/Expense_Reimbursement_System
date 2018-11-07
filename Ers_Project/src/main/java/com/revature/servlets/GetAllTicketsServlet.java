@@ -26,7 +26,6 @@ public class GetAllTicketsServlet extends HttpServlet {
 	List<Reimbursement> allTickets = new ArrayList<Reimbursement>();
 	
 	ObjectMapper mapper = new ObjectMapper();
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		if(logger.isDebugEnabled()) {

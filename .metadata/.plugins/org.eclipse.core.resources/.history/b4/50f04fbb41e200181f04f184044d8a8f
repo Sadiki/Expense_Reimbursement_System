@@ -1,0 +1,11 @@
+<div id='welcome_page'>
+<div class="message">
+    <h1 id="welcome_message">Welcome</h1>
+    
+    <p id="main_message" ></p>
+    </div>
+    <br/>
+      <button id='create_account' class='home_button'>New Account</button></div>
+        
+    </div>
+</div>

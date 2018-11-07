@@ -15,6 +15,8 @@ window.onload = function() {
 	} else {
 		loadHome();
 	}
+	
+	document.getElementById('company_name').addEventListener('click', loadHome);
 
 }
 
@@ -350,7 +352,7 @@ function loadUserTable() {
 				}
 
 				ticketTable.row.add(
-						[ allTicketsJSON.id, allTicketsJSON.amount,
+						[ allTicketsJSON.id,'$' + allTicketsJSON.amount.toFixed(2),
 								allTicketsJSON.submitted,
 								allTicketsJSON.resolved, allTicketsJSON.desc,
 								allTicketsJSON.author_id,
@@ -579,7 +581,7 @@ function loadAdminTable() {
 				}
 
 				ticketTable.row.add(
-						[ allTicketsJSON.id, allTicketsJSON.amount,
+						[ allTicketsJSON.id, '$' + allTicketsJSON.amount.toFixed(2),
 								allTicketsJSON.submitted,
 								allTicketsJSON.resolved, allTicketsJSON.desc,
 								allTicketsJSON.author_id,

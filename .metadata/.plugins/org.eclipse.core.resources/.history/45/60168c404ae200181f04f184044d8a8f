@@ -1,0 +1,27 @@
+<div id="viewContainer">
+<div id= 'viewMenu'>
+    <h1>Please Enter New Ticket Information</h1>
+    <br>
+    <br>
+    <form>
+        Amount
+        <input id='amount'>
+        <br/>
+        Description
+        <input id='description'>
+        <br/>
+        Type
+        <select id='type'>
+            <option>Lodging</option>
+            <option>Travel</option>
+            <option>Food</option>
+            <option>Other</option>
+        </select>
+</form>
+<br>
+<br>
+<button id='addTicket'>Submit</button>
+	
+<div class ="alert-danger"></div>
+</div>
+</div>
