@@ -1,0 +1,24 @@
+<div>
+		<table id='all_tickets' id="table_id" class="display">
+			<thead>
+				<tr>
+					<th>Ticket ID #</th>
+					<th>Amount</th>
+					<th>Date Submitted</th>
+					<th>Date Resolved</th>
+					<th>Description</th>
+					<th>Submitted By</th>
+					<th>Resolved By</th>
+					<th>Status</th>
+					<th>Type</th>
+				</tr>
+			</thead>
+			<tbody id='all_ticketsBody'>
+			</tbody>
+		</table>
+
+
+	<button id='approve_ticket'>Approve Ticket</button>
+	<button id='deny_ticket'>Deny Ticket</button>
+</div>
+

@@ -1,6 +1,8 @@
 // Global Variable
-
-let currReimJSON;
+let validatedUsername;
+let validatedEmail;
+let validatedFirstName;
+let validatedLastName;
 
 window.onload = function() {
 	let currUserJSON = this.localStorage.getItem('user');
@@ -67,23 +69,20 @@ function loadCreateAccountInfo() {
 	document.getElementById('email').addEventListener('blur', validateEmail);
 	document.getElementById('username').addEventListener('blur',
 			validateUsername);
-	document.getElementById('createAccBtn').disabled = false;
+	document.getElementById('firstname').addEventListener('blur', validateFirstName);
+	document.getElementById('lastname').addEventListener('blur', validateLastName);
 	document.getElementById('createAccBtn').addEventListener('click',
-			createAccount);
+			validateCreateAccount);
 }
 
 function loadCreateAccount() {
 	console.log('In createAccount()');
-
 	// Create new xhr request
 	let xhr = new XMLHttpRequest();
-
 	// Open xhr request
 	xhr.open('Get', 'create_account.view', true);
-
 	// Send the request
 	xhr.send();
-
 	// Wait for the response then perform this action when response is received
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
@@ -94,6 +93,15 @@ function loadCreateAccount() {
 }
 
 function createAccount() {
+	
+	let roleId = 0;
+	
+	if(document.getElementById('admin_key').value === 'Waffles'){
+		roleId = 1;
+	} else{
+		roleId = 2;
+		}
+	
 	let user = {
 		id : 0,
 		username : document.getElementById('username').value,
@@ -101,26 +109,72 @@ function createAccount() {
 		firstname : document.getElementById('firstname').value,
 		lastname : document.getElementById('lastname').value,
 		email : document.getElementById('email').value,
-		role_id : 2
+		role_id : roleId
 	}
-
 	let userJSON = JSON.stringify(user);
-
 	// Create new xhr request
 	let xhr = new XMLHttpRequest();
-
 	// Open xhr request
 	xhr.open('POST', 'create_account', true);
-
 	// Send the request
 	xhr.send(userJSON);
-
 	// Wait for the response then perform this action when response is received
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			console.log(userJSON);
 			loadLogin();
 		}
+	}
+}
+
+function validateCreateAccount() {
+
+	let email = document.getElementById('email').value;
+	validEmail = validateEmail(email);
+
+	// make sure all fields are filled in. return true if true, and return to
+	// loadCreateAccountInfo if false.
+	if (document.getElementById('username').value
+			&& document.getElementById('password').value
+			&& document.getElementById('firstname').value
+			&& document.getElementById('lastname').value
+			&& document.getElementById('email').value) {
+		console.log('all fields filled in...')
+	} else {
+		alert('Please enter all valid fields!');
+	}
+if(validatedFirstName && validatedLastName){
+	if (!validatedUsername && !validatedEmail) {
+		alert('Username and Email are already taken. Please try another.')
+		document.getElementById('username').innerText = '';
+		document.getElementById('email').innerText = '';
+	} else if (!validatedUsername) {
+		alert('Username is already taken. Please try another.');
+		document.getElementById('username').innerText = '';
+		document.getElementById('username').focus();
+	} else if (!validatedEmail || !validEmail) {
+		alert('Email is already taken or invalid. Please try another.');
+		document.getElementById('email').innerText = '';
+		document.getElementById('email').focus();
+	} else {
+		createAccount();
+	}
+} else{
+	alert('First name or last name may not include special characters or be longer than 100 characters!');
+	 document.getElementById('firstname').innerText = ' ';
+	 document.getElementById('lastname').innerText = ' ';
+	 if(!validatedFirstName){
+		 document.getElementById('firstname').focus();
+	 }else
+		 {
+		 	document.getElemenyById('lastname').focus();
+		 }
+	
+}
+
+	function validateEmail(email) {
+		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(String(email).toLowerCase());
 	}
 }
 
@@ -188,6 +242,16 @@ function login() {
 	}
 }
 
+function loadUserLoginInfo() {
+	console.log('loadUserLoginInfo()')
+	document.getElementById('new_ticket').addEventListener('click',
+			loadNewTicket);
+	// document.getElementById('all_tickets').addEventListener('click',
+	// loadNewTicket);
+	document.getElementById('nav_logout').addEventListener('click', logout);
+
+}
+
 function loadUserLogin() {
 	console.log('In userLogin()');
 
@@ -212,22 +276,99 @@ function loadUserLogin() {
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4 && xhr.status == 200) {
 					document.getElementById('view').innerHTML = userLogin;
-					document.getElementById('nav_view').innerHTML = xhr.responseText;
+					let navView = document.getElementById('nav_view');
+					navView.innerHTML = xhr.responseText;
+					// Set name to the view
+					document.getElementById('personName').innerText = 'Hi, '
+							+ JSON.parse(window.localStorage.getItem('user')).firstname
+							+ ' '
+							+ JSON.parse(window.localStorage.getItem('user')).lastname
+							+ '!';
 					loadUserLoginInfo();
+					loadUserTable();
 				}
 			}
 		}
 	}
 }
 
-function loadUserLoginInfo() {
-	console.log('loadUserLoginInfo()')
-	document.getElementById('new_ticket').addEventListener('click',
-			loadNewTicket);
-	// document.getElementById('all_tickets').addEventListener('click',
-	// loadNewTicket);
-	document.getElementById('nav_logout').addEventListener('click', logout);
+function loadUserTable() {
 
+	let user = window.localStorage.getItem('user');
+	let userId = JSON.parse(user).id;
+	let userIdJSON = JSON.stringify(userId);
+	let xhr = new XMLHttpRequest();
+
+	// Open xhr request
+	xhr.open('POST', 'all_user_tickets', true);
+
+	xhr.setRequestHeader('Content-type', 'application/json');
+	// Send the request
+	xhr.send(userIdJSON);
+
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+
+			let allTicketsString = xhr.responseText
+			console.log(allTicketsString);
+			let allTicketsJSON = [];
+			// Get the ticket table
+			let ticketTable = $('#all_tickets').DataTable();
+
+			let tableBody = document.getElementById('all_ticketsBody');
+
+			ticketsArr = allTicketsString.split('*');
+
+			for (let i = 1; i < ticketsArr.length; i++) {
+				allTicketsJSON = JSON.parse(ticketsArr[i]);
+				// turn status ID into pending, approved, or denied
+				let statusIdTd = document.createElement('td');
+				if (allTicketsJSON.status_id == '1') {
+					allTicketsJSON.status_id = 'Pending';
+				}
+				if (allTicketsJSON.status_id == '2') {
+					allTicketsJSON.status_id = 'Approved';
+				}
+				if (allTicketsJSON.status_id == '3') {
+					allTicketsJSON.status_id = 'Denied';
+				}
+
+				// turn type_id into a string
+				let typeIdTd = document.createElement('td');
+
+				if (allTicketsJSON.type_id == '1') {
+					allTicketsJSON.type_id = 'Lodging';
+				}
+				if (allTicketsJSON.type_id == '2') {
+					allTicketsJSON.type_id = 'Travel';
+				}
+				if (allTicketsJSON.type_id == '3') {
+					allTicketsJSON.type_id = 'Food';
+				}
+				if (allTicketsJSON.type_id == '4') {
+					allTicketsJSON.type_id = 'Other';
+				}
+
+				ticketTable.row.add(
+						[ allTicketsJSON.id, allTicketsJSON.amount,
+								allTicketsJSON.submitted,
+								allTicketsJSON.resolved, allTicketsJSON.desc,
+								allTicketsJSON.author_id,
+								allTicketsJSON.resolver_id,
+								allTicketsJSON.status_id,
+								allTicketsJSON.type_id ]).draw(false);
+			}
+			ticketTable.on('click', 'tr', function() {
+				if ($(this).hasClass('selected')) {
+					$(this).removeClass('selected');
+				} else {
+					ticketTable.$('tr.selected').removeClass('selected');
+					$(this).addClass('selected');
+				}
+			});
+		}
+
+	}
 }
 
 function loadNewTicket() {
@@ -254,7 +395,13 @@ function loadNewTicket() {
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4 && xhr.status == 200) {
 					document.getElementById('view').innerHTML = ticketView
-					document.getElementById('nav_view').innerHTML = xhr.responseText;
+					let navView = document.getElementById('nav_view');
+					navView.innerHTML = xhr.responseText;
+					document.getElementById('personName').innerText = 'Hi, '
+							+ JSON.parse(window.localStorage.getItem('user')).firstname
+							+ ' '
+							+ JSON.parse(window.localStorage.getItem('user')).lastname
+							+ '!';
 					loadCreateNewTicket();
 				}
 			}
@@ -276,34 +423,48 @@ function createNewTicket() {
 			document.getElementById('description').value, '1',// status id -
 			// pending
 			document.getElementById('type').selectedIndex + 1,
-			JSON.parse(user).id];
+			JSON.parse(user).id ];
 
+	console.log(document.getElementById('amount').value);
+	
+	let validatedAmount = validateAmount(newTicket[0]);
+	
 	if (!newTicket[0] || !newTicket[1]) {
 		alert("Please enter all fields!")
 		return false;
 		loadNewTicket();
 	}
-	if (isNaN(newTicket[0])) {
+	else if (isNaN(newTicket[0]) || !validatedAmount) {
 		alert("Please enter only a valid dollar amount");
-		return false;
+		document.getElementById('amount').value = '';
+		document.getElementById('amount').focus();
 		loadNewTicket();
 	}
-	let xhr = new XMLHttpRequest();
+	else if (newTicket[0] <= 0){
+		alert("Amount must be greater than $0.00!");
+		loadNewTicket();
+	}else{
+		let xhr = new XMLHttpRequest();
 
-	// Open xhr request
-	xhr.open('POST', 'new_ticket', true);
-	let newTicketJSON = JSON.stringify(newTicket);
-	// Send the request
-	xhr.send(newTicketJSON);
+		// Open xhr request
+		xhr.open('POST', 'new_ticket', true);
+		let newTicketJSON = JSON.stringify(newTicket);
+		// Send the request
+		xhr.send(newTicketJSON);
 
-	// Wait for the response then perform this action when response is received
-	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-			window.localStorage.setItem('ticket', JSON
-					.stringify(xhr.responseText));
-			console.log('success')
-			loadUserLogin();
+		// Wait for the response then perform this action when response is received
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				window.localStorage.setItem('ticket', JSON.stringify(xhr.responseText));
+				loadUserLogin();
+			}
 		}
+	}
+	
+	
+	function validateAmount(amount) {
+		var re = /^\$?[0-9]+\.?[0-9]?[0-9]?$/;
+		return re.test(String(amount));
 	}
 }
 
@@ -318,9 +479,10 @@ function loadAdminInfo() {
 	$(document).ready(function() {
 		$('#all_tickets').DataTable();
 	});
-	// document.getElementById('approve').addEventListener('click',
-	// approveTicket);
-	// document.getElementById('deny').addEventListener('click', denyTicket);
+	document.getElementById('approve_ticket').addEventListener('click',
+			approveTicket);
+	document.getElementById('deny_ticket')
+			.addEventListener('click', denyTicket);
 	loadAdminTable();
 }
 
@@ -348,7 +510,13 @@ function loadAdminLogin() {
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4 && xhr.status == 200) {
 					document.getElementById('view').innerHTML = adminLogin;
-					document.getElementById('nav_view').innerHTML = xhr.responseText;
+					let navView = document.getElementById('nav_view');
+					navView.innerHTML = xhr.responseText;
+					document.getElementById('personName').innerText = 'Hi, '
+							+ JSON.parse(window.localStorage.getItem('user')).firstname
+							+ ' '
+							+ JSON.parse(window.localStorage.getItem('user')).lastname
+							+ '!';
 					loadAdminInfo();
 				}
 			}
@@ -373,6 +541,7 @@ function loadAdminTable() {
 			let allTicketsString = xhr.responseText
 			let allTicketsJSON = [];
 			// Get the ticket table
+			var selected = [];
 			let ticketTable = $('#all_tickets').DataTable();
 
 			let tableBody = document.getElementById('all_ticketsBody');
@@ -381,43 +550,33 @@ function loadAdminTable() {
 			for (let i = 1; i < ticketsArr.length; i++) {
 				allTicketsJSON = JSON.parse(ticketsArr[i]);
 
-				// Create table body, table row and table data elements
-
-				let tableRow = document.createElement('tr');
-				let tableData = document.createElement('td');
-
-				// Create variables for each element to be inserted
-				let idTd = document.createElement('td');
-				idTd.innerText = allTicketsJSON.id;
-				tableRow.appendChild(idTd);
-
-				let amountTd = document.createElement('td');
-				amountTd.innerText = allTicketsJSON.amount;
-				tableRow.appendChild(amountTd);
-
-				let submittedTd = document.createElement('td');
-				submittedTd.innerText = allTicketsJSON.submitted;
-				tableRow.appendChild(submittedTd);
-
-				let resolvedTd = document.createElement('td');
-				resolvedTd.innerText = allTicketsJSON.resolved;
-				tableRow.appendChild(resolvedTd);
-
-				let descriptionTd = document.createElement('td');
-				descriptionTd.innerText = allTicketsJSON.desc;
-				tableRow.appendChild(descriptionTd);
-
-				let resolverIdTd = document.createElement('td');
-				resolverIdTd.innerText = allTicketsJSON.resolver_id;
-				tableRow.appendChild(resolverIdTd);
-
+				// turn status ID into pending, approved, or denied
 				let statusIdTd = document.createElement('td');
-				statusIdTd.innerText = allTicketsJSON.status_id;
-				tableRow.appendChild(statusIdTd);
+				if (allTicketsJSON.status_id == '1') {
+					allTicketsJSON.status_id = 'Pending';
+				}
+				if (allTicketsJSON.status_id == '2') {
+					allTicketsJSON.status_id = 'Approved';
+				}
+				if (allTicketsJSON.status_id == '3') {
+					allTicketsJSON.status_id = 'Denied';
+				}
 
+				// turn type_id into a string
 				let typeIdTd = document.createElement('td');
-				typeIdTd.innerText = allTicketsJSON.type_id;
-				tableRow.appendChild(typeIdTd);
+
+				if (allTicketsJSON.type_id == '1') {
+					allTicketsJSON.type_id = 'Lodging';
+				}
+				if (allTicketsJSON.type_id == '2') {
+					allTicketsJSON.type_id = 'Travel';
+				}
+				if (allTicketsJSON.type_id == '3') {
+					allTicketsJSON.type_id = 'Food';
+				}
+				if (allTicketsJSON.type_id == '4') {
+					allTicketsJSON.type_id = 'Other';
+				}
 
 				ticketTable.row.add(
 						[ allTicketsJSON.id, allTicketsJSON.amount,
@@ -427,33 +586,79 @@ function loadAdminTable() {
 								allTicketsJSON.resolver_id,
 								allTicketsJSON.status_id,
 								allTicketsJSON.type_id ]).draw(false);
-
-				// Append the new populated row to the body
-				// tableBody.appendChild(tableRow);
-
 			}
-			// Append the body to the table
-			// ticketTable.appendChild(tableBody);
+			ticketTable.on('click', 'tr', function() {
+				if ($(this).hasClass('selected')) {
+					$(this).removeClass('selected');
+				} else {
+					ticketTable.$('tr.selected').removeClass('selected');
+					$(this).addClass('selected');
+				}
+			});
 		}
 
 	}
 }
 
-function validateUsername() {
-	console.log('In validateUsername()');
-
-	// hide message if they begin typing again
-	document.getElementById('createAccBtn').disabled = false;
-	document.getElementById('createAcc-mess').style.display = 'none';
-
-	let username = document.getElementById('username').value;
-	let usernameJSON = JSON.stringify(username);
-
+function approveTicket() {
+	// Get the ticket table
+	let ticketTable = $('#all_tickets').DataTable();
 	let xhr = new XMLHttpRequest();
 
+	let ticArr = [ JSON.parse(window.localStorage.getItem('user')).id, 2,
+			ticketTable.row('.selected').data()[0] ];
+
+	let ticArrJSON = JSON.stringify(ticArr);
+
+	// Open xhr request
+	xhr.open('POST', 'update_ticket', true);
+
+	xhr.setRequestHeader('Content-type', 'application/json');
+	// Send the request
+	xhr.send(ticArrJSON);
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			console.log('Sucess');
+			loadAdminLogin();
+		}
+
+	}
+
+}
+
+function denyTicket() {
+	// Get the ticket table
+	let ticketTable = $('#all_tickets').DataTable();
+	let xhr = new XMLHttpRequest();
+
+	let ticArr = [ JSON.parse(window.localStorage.getItem('user')).id, 3,
+			ticketTable.row('.selected').data()[0] ];
+
+	let ticArrJSON = JSON.stringify(ticArr);
+
+	// Open xhr request
+	xhr.open('POST', 'update_ticket', true);
+
+	xhr.setRequestHeader('Content-type', 'application/json');
+	// Send the request
+	xhr.send(ticArrJSON);
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			console.log('Success');
+			loadAdminLogin();
+		}
+	}
+}
+
+function validateUsername() {
+	console.log('In validateUsername()');
+	// hide message if they begin typing again
+	document.getElementById('createAcc-mess').style.display = 'none';
+	let username = document.getElementById('username').value;
+	let usernameJSON = JSON.stringify(username);
+	let xhr = new XMLHttpRequest();
 	// Open xhr request
 	xhr.open('POST', 'username.validate', true);
-
 	xhr.setRequestHeader('Content-type', 'application/json');
 	// Send the request
 	xhr.send(usernameJSON);
@@ -462,11 +667,12 @@ function validateUsername() {
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			let username = JSON.parse(xhr.responseText);
-
-			if (!username) {
+			if (!username && !(username === '')) {
 				document.getElementById('createAcc-mess').style.display = 'block';
 				document.getElementById('createAcc-mess').innerText = 'Sorry, username is already in use. Please try another.';
-				document.getElementById('createAccBtn').disabled = false;
+				validatedUsername = false;
+			} else {
+				validatedUsername = true;
 			}
 		}
 	}
@@ -474,36 +680,92 @@ function validateUsername() {
 
 function validateEmail() {
 	console.log('In validateEmail()');
-
 	// hide message if they begin typing again
-	document.getElementById('createAccBtn').disabled = false;
 	document.getElementById('createAcc-mess').style.display = 'none'
-
 	let email = document.getElementById('email').value;
 	let emailJSON = JSON.stringify(email);
-
 	let xhr = new XMLHttpRequest();
-
 	// Open xhr request
 	xhr.open('POST', 'email.validate', true);
-
 	xhr.setRequestHeader('Content-type', 'application/json');
-
 	// Send the request
 	xhr.send(emailJSON);
-
 	// Wait for the response then perform this action when response is received
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			let email = JSON.parse(xhr.responseText);
-			if (!email) {
+			if (!email && !(email === '')) {
+				console.log(email)
 				document.getElementById('createAcc-mess').style.display = 'block';
-				document.getElementById('createAcc-mess').innerHtml = 'Sorry, email is already in use. Please try another.';
-				document.getElementById('createAccBtn').disabled = false;
+				document.getElementById('createAcc-mess').innerText = 'Sorry, email is already in use. Please try another.';
+				validatedEmail = false;
+			} else {
+				validatedEmail = true;
 			}
 		}
 	}
 }
+
+function validateFirstName() {
+	console.log('In validateName()');
+
+	let fullName = [ document.getElementById('firstname').value,
+			document.getElementById('lastname').value ]
+	let fullNameJSON = JSON.stringify(fullName);
+
+	let xhr = new XMLHttpRequest();
+	// Open xhr request
+	xhr.open('POST', 'name.validate', true);
+	xhr.setRequestHeader('Content-type', 'application/json');
+	// Send the request
+	xhr.send(fullNameJSON);
+	// Wait for the response then perform this action when response is received
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			let name = JSON.parse(xhr.responseText);
+			if (!name) {
+				console.log(name);
+				document.getElementById('createAcc-mess').style.display = 'block';
+				document.getElementById('createAcc-mess').innerText = 'Please enter a valid full name.';
+				validatedFirstName = false;
+			} else {
+				validatedFirstName = true;
+			}
+
+		}
+	}
+}
+
+function validateLastName() {
+	console.log('In validateName()');
+
+	let fullName = [ document.getElementById('firstname').value,
+			document.getElementById('lastname').value ]
+	let fullNameJSON = JSON.stringify(fullName);
+
+	let xhr = new XMLHttpRequest();
+	// Open xhr request
+	xhr.open('POST', 'name.validate', true);
+	xhr.setRequestHeader('Content-type', 'application/json');
+	// Send the request
+	xhr.send(fullNameJSON);
+	// Wait for the response then perform this action when response is received
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			let name = JSON.parse(xhr.responseText);
+			if (!name) {
+				console.log(name);
+				document.getElementById('createAcc-mess').style.display = 'block';
+				document.getElementById('createAcc-mess').innerText = 'Please enter a valid full name.';
+				validatedLastName = false;
+			} else {
+				validatedLastName = true;
+			}
+
+		}
+	}
+}
+
 
 function logout() {
 	console.log('In logout()');

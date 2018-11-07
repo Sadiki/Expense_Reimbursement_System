@@ -1,0 +1,43 @@
+package com.revature.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.models.Reimbursement;
+import com.revature.services.ReimbursementService;
+
+@WebServlet("/all_user_tickets")
+public class GetUserTicketsServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	ReimbursementService reimbService = new ReimbursementService();
+	List<Reimbursement> allUserTickets = new ArrayList<Reimbursement>();
+
+	ObjectMapper mapper = new ObjectMapper();
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		allUserTickets = reimbService.getAllTickets();
+
+		String allUserTicketsJSON = "";
+
+		// Create a printwriter to send back the information
+		PrintWriter pw = response.getWriter();
+		response.setContentType("application/JSON");
+
+		for (Reimbursement tic : allUserTickets) {
+			allUserTicketsJSON += "*" + mapper.writeValueAsString(tic);
+		}
+		System.out.println(allUserTicketsJSON);
+		pw.write(allUserTicketsJSON);
+	}
+}

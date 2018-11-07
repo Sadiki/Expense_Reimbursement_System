@@ -1,5 +1,57 @@
 package com.revature.servlets;
 
-public class GetUserTicketsServlet {
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.models.Reimbursement;
+import com.revature.services.ReimbursementService;
+
+@WebServlet("/all_user_tickets")
+public class GetUserTicketsServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	final Logger logger = Logger.getLogger(GetUserTicketsServlet.class);
+		
+	ReimbursementService reimbService = new ReimbursementService();
+	List<Reimbursement> allUserTickets = new ArrayList<Reimbursement>();
+
+	ObjectMapper mapper = new ObjectMapper();
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		if(logger.isDebugEnabled()) {
+			logger.debug("Request sent to GetUserTicketServlet.doPost()");
+		}
+		
+		if(logger.isTraceEnabled()) {
+			logger.trace("Request sent to GetUserTicketServlet.doPost()");
+		}
+		
+		
+		int authorId = mapper.readValue(request.getInputStream(), Integer.class);
+		
+		allUserTickets = reimbService.getUserTickets(authorId);
+
+		String allUserTicketsJSON = "";
+
+		// Create a printwriter to send back the information
+		PrintWriter pw = response.getWriter();
+		response.setContentType("application/JSON");
+
+		for (Reimbursement tic : allUserTickets) {
+			allUserTicketsJSON += "*" + mapper.writeValueAsString(tic);
+		}
+		pw.write(allUserTicketsJSON);
+	}
 }

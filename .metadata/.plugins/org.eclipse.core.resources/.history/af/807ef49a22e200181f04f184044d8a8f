@@ -1,0 +1,26 @@
+<div id="createAccount">
+    <h1>Create Account</h1>
+    First Name:
+    <input id='firstname'class='register'type='text'>
+    <br/>
+    Last Name:
+	<input id='lastname'class='register'type='text'>
+    <br/>
+    Enter Your Email:
+    <input id='email'class='register'type='text'>
+    <br/>
+    Create a User Name:
+    <input id='username'class='register'type='text'>
+    <br/>
+    Create a Password:
+    <input id='password'class='register'type='password'>
+    <br/>
+    Enter Admin Key:
+    <input id='admin_key'type='password'>
+    </form>
+    <br/>
+    <button id='createAccBtn'>Create Account</button>
+    
+    <div class ="alert alert-danger" id="createAcc-mess"></div>
+    
+</div>

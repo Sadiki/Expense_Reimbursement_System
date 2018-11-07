@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.models.Users;
 import com.revature.services.UserService;
@@ -18,9 +20,17 @@ import com.revature.services.UserService;
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-
+	final Logger logger = Logger.getLogger(LoginServlet.class);
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		System.out.println("IN LOGINSERVLET");
+
+		if(logger.isDebugEnabled()) {
+			logger.debug("Request sent to LoginServlet.doPost()");
+		}
+		
+		if(logger.isTraceEnabled()) {
+			logger.trace("Request sent to LoginServlet.doPost()");
+		}
 		
 		UserService userService = new UserService();
 		ObjectMapper mapper = new ObjectMapper();
@@ -30,11 +40,6 @@ public class LoginServlet extends HttpServlet {
 		String password = userCreds[1];
 		
 		Users currUser = userService.Login(username, password);
-		
-//		// Creates a session which will keep track on whether the user has already logged in or not.
-//		HttpSession session = request.getSession();
-//		// Sets the session id of the user as a cookie.
-//		session.setAttribute("user", currUser);
 		
 		PrintWriter pw = response.getWriter();
 		response.setContentType("application/json");

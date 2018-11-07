@@ -17,7 +17,7 @@ public class ValidationHelper {
 		
 		
 		switch(request.getRequestURI()) {
-		case "/ERS-Project_1/username.validate":
+		case "/Ers_Project/username.validate":
 			String username = mapper.readValue(request.getInputStream(), String.class);
 		
 			if(userService.isUsernameAvaliable(username)) {
@@ -26,7 +26,7 @@ public class ValidationHelper {
 			{
 				return null;
 			}
-		case "/ERS-Project_1/email.validate":
+		case "/Ers_Project/email.validate":
 			String email = mapper.readValue(request.getInputStream(), String.class);
 			if(userService.isEmailAvaliable(email)) {
 				return email;
@@ -34,10 +34,9 @@ public class ValidationHelper {
 			{
 				return null;
 			}
-		case "/ERS-Project_1/name.validate":
-			String name = mapper.readValue(request.getInputStream(), String.class);
-			String[] nameArr = name.split(" ");
-			
+		case "/Ers_Project/name.validate":
+			String[] nameArr = mapper.readValue(request.getInputStream(), String[].class);
+System.out.println("Name: " + nameArr[0]);
 			// Checks if firstname and last name includes any special characters or numbers.
 			Pattern pattern = Pattern.compile("[a-zA-Z]*");
 			
@@ -46,7 +45,7 @@ public class ValidationHelper {
 			Matcher lastNameMatcher = pattern.matcher(nameArr[1]);
 			
 			if(firstNameMatcher.matches() && nameArr[0].length() < 100 && !(nameArr[0].contains(" ")) && lastNameMatcher.matches() && !(nameArr[1].contains(" ")) && nameArr[1].length() < 100) {
-				return name;
+				return nameArr[0];
 			}else
 			{
 				return null;

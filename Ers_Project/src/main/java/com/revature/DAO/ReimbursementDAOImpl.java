@@ -1,14 +1,16 @@
 package com.revature.DAO;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.revature.models.Reimbursement;
 import com.revature.util.ConnectionFactory;
+
+import oracle.jdbc.OracleTypes;
 
 public class ReimbursementDAOImpl implements ReimbursementDAO {
 
@@ -20,15 +22,21 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 		// Open a connection to the account database
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
-			// Storing SQL query string to get all accounts
-			String sql = "SELECT * FROM ers_reimbursement";
+			// Call a stored procedure. Use a parameterized SQL query, using '?' as a
+			// reference for specified values.
+			String sql = "{CALL get_all_tickets(?)}";
 
-			// Get a statement object from connection object
-			Statement stmt = conn.createStatement();
+			// Create a callable statement that will call the stored procedure
+			CallableStatement cstmt = conn.prepareCall(sql);
 
-			// Execute the sql command and get resultset of accounts
-			ResultSet rs = stmt.executeQuery(sql);
+			// Define the 2nd parameter as a cursor
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			// Execute the callable
+			cstmt.execute();
 
+			// cstmt.getObject is returned as an object so cast it as a ResultSet. Which it is.
+			ResultSet rs = (ResultSet) cstmt.getObject(1);
+			
 			// Loop through the resultset of accounts
 			while (rs.next()) {
 				// Store account in a local account obj
@@ -36,7 +44,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 				// Grab the id, amount, submitted, resolved, description, author, resolver,
 				// status_id, type_id from the database and store it into local reimbusement obj
 				reim.setId(rs.getInt(1));
-				reim.setAmount(rs.getInt(2));
+				reim.setAmount(rs.getDouble(2));
 				reim.setSubmitted(rs.getString(3));
 				reim.setResolved(rs.getString(4));
 				reim.setDesc(rs.getString(5));
@@ -73,7 +81,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 			// Get the PreparedStatement object from the connection and generate an account
 			// id
 			PreparedStatement pstmt = conn.prepareStatement(sql, id);
-
+			
 			pstmt.setDouble(1, amount);
 			pstmt.setString(2, description);
 			pstmt.setInt(3, statusId);
@@ -123,7 +131,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 				// Grab the id, amount, submitted, resolved, description, author, resolver,
 				// status_id, type_id from the database and store it into local reimbusement obj
 				reim.setId(rs.getInt(1));
-				reim.setAmount(rs.getInt(2));
+				reim.setAmount(rs.getDouble(2));
 				reim.setSubmitted(rs.getString(3));
 				reim.setResolved(rs.getString(4));
 				reim.setDesc(rs.getString(5));
@@ -151,15 +159,21 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 			// Storing SQL query string to get all accounts
 			String sql = "UPDATE ers_reimbursement SET reimb_resolver = ?, reimb_status_id = ? WHERE reimb_id = ?";
 
+			// Create a single element array that will hold column name
+			String[] resolvedDate = new String[1];
+			resolvedDate[0] = "reimb_resolved";
+
 			// Get a prepared statement object from connection object
-			PreparedStatement pstmt = conn.prepareStatement(sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql, resolvedDate);
 
 			pstmt.setInt(1, userId);
 			pstmt.setInt(2, statusId);
 			pstmt.setInt(3, ticketId);
 
-			// Execute the sql command and get resultset of accounts
-			ResultSet rs = pstmt.executeQuery(sql);
+			int rowInserted = pstmt.executeUpdate();
+
+			// Get resultset
+			ResultSet rs = pstmt.getGeneratedKeys();
 
 			if (rs != null) {
 				return true;
@@ -180,7 +194,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 
 			conn.setAutoCommit(false);
 
-			String sql = "SELECT * FROM ers_reimbursement WHERE reimb_submitted = ?";
+			String sql = "SELECT * FROM ers_reimbursement WHERE reimb_author = ?";
 
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 
@@ -196,7 +210,7 @@ public class ReimbursementDAOImpl implements ReimbursementDAO {
 				// Grab the id, amount, submitted, resolved, description, author, resolver,
 				// status_id, type_id from the database and store it into local reimbusement obj
 				reim.setId(rs.getInt(1));
-				reim.setAmount(rs.getInt(2));
+				reim.setAmount(rs.getDouble(2));
 				reim.setSubmitted(rs.getString(3));
 				reim.setResolved(rs.getString(4));
 				reim.setDesc(rs.getString(5));

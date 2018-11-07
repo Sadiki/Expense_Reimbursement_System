@@ -1,0 +1,12 @@
+<div>
+    Welcome
+    <label id='customer_name'></label>
+</div>
+
+<div>
+    <button id='new_ticket'>Create New Ticket</button>
+</div>
+
+<div>
+    <table id='all_tickets'></table>
+</div>

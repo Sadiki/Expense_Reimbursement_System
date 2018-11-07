@@ -96,15 +96,6 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE TRIGGER new_approval_or_deny
-AFTER UPDATE ON ers_reimbursement
-FOR EACH ROW
-BEGIN
-    INSERT INTO ers_reimbursement(reimb_resolved)
-    VALUES (CURRENT_TIMESTAMP);
-END;
-/
-
 -- Procedure to check if user exists in table
 CREATE OR REPLACE PROCEDURE get_user(usrname IN ers_users.ers_username%TYPE, my_cursor OUT SYS_REFCURSOR)
 AS
@@ -148,3 +139,12 @@ commit;
 
 Select * FROM ers_reimbursement;
 Select * FROM ers_users;
+
+CREATE OR REPLACE PROCEDURE get_all_tickets(my_cursor OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN my_cursor FOR
+    SELECT *
+    FROM ers_reimbursement;
+END;
+/

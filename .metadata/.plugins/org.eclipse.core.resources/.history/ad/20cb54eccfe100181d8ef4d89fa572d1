@@ -1,0 +1,5 @@
+
+<div>
+    <button id='new_ticket'>Create New Ticket</button>
+    <table id='all_tickets'></table>
+</div>

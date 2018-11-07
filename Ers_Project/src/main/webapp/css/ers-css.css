@@ -1,5 +1,5 @@
 body {
-	background-color: #871D19;
+	background-color: #763131;
 }
 
 #company_name{
@@ -57,7 +57,11 @@ body {
 }
 
 #createAccount{
-	top: 15%;
+	margin-top: 3%;
+	background-color:white;
+	width: 40%;
+	margin-left: 40%;
+	padding:20px;
 }
 
 .home_button {
@@ -114,14 +118,6 @@ body {
 	text-align: center;
 }
 
-/*#view{
-    margin-top: 75px;
-    width: 80%;
-    display: inline-block;
-    border: 2px #edf0ed solid;
-    background-color: white;
-    padding: 50px;
-    border-radius: 10px;
-
-
-}*/
+#all_tickets_wrapper{
+	margin-top:3%;
+}

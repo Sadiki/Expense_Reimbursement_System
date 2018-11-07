@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.util.ValidationHelper;
 
@@ -16,10 +18,16 @@ import com.revature.util.ValidationHelper;
 public class ValidationServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
+	final Logger logger = Logger.getLogger(ValidationServlet.class);
 
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
-		
-		System.out.println("Request sent to Front Controller. Validation servlet.doGet()");
+		if (logger.isDebugEnabled()) {
+			logger.debug("Request sent to Front Controller. Validation servlet.doGet()");
+		}
+
+		if (logger.isTraceEnabled()) {
+			logger.trace("Request sent to Front Controller. Validation servlet.doGet()");
+		}
 		
 		String validatedInput = ValidationHelper.process(request);
 		

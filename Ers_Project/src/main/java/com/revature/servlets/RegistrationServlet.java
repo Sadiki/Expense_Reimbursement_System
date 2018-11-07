@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.models.Users;
 import com.revature.services.UserService;
@@ -18,10 +20,17 @@ import com.revature.services.UserService;
 public class RegistrationServlet extends HttpServlet implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-
+	final Logger logger = Logger.getLogger(RegistrationServlet.class);
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		System.out.println("In Registration Servlt doPost");
-		
+		System.out.println();
+		if (logger.isDebugEnabled()) {
+			logger.debug("In RegistrationServlet.doPost()");
+		}
+
+		if (logger.isTraceEnabled()) {
+			logger.trace("In RegistrationServlet.doPost()");
+		}
 		UserService userService = new UserService();
 		ObjectMapper mapper = new ObjectMapper();
 

@@ -1,0 +1,6 @@
+1541540255104	Rename resource 'configuration.xml'
+1541540440844	Rename resource 'log4j.configurationFile.xml'
+1541540480352	Move 'log4j.xml' to 'resources'
+1541540699894	Rename resource 'log4j.xml'
+1541540731650	Delete element
+1541542345180	Delete element

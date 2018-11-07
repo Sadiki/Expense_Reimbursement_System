@@ -27,7 +27,6 @@ public class UsersDAOImpl implements UsersDAO {
 
 			pstmt.setString(1, username);
 			pstmt.setString(2, password);
-			System.out.println(pstmt);
 			// Get resultset
 			ResultSet rs = pstmt.executeQuery();
 
@@ -52,7 +51,6 @@ public class UsersDAOImpl implements UsersDAO {
 	@Override
 	public boolean addUser(Users newUser) {
 		Users user = new Users();
-		System.out.println("ERRORRRS");
 		try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
 
 			conn.setAutoCommit(false);
@@ -123,7 +121,6 @@ public class UsersDAOImpl implements UsersDAO {
 					user.setRole_id(rs.getInt(7));
 				}
 
-				System.out.println(user.getUsername());
 				conn.commit();
 			}
 		} catch (SQLException sqle) {
