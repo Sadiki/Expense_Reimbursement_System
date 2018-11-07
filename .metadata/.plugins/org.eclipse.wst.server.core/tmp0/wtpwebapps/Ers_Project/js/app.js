@@ -15,7 +15,7 @@ window.onload = function() {
 	} else {
 		loadHome();
 	}
-	
+
 	document.getElementById('company_name').addEventListener('click', loadHome);
 
 }
@@ -71,8 +71,10 @@ function loadCreateAccountInfo() {
 	document.getElementById('email').addEventListener('blur', validateEmail);
 	document.getElementById('username').addEventListener('blur',
 			validateUsername);
-	document.getElementById('firstname').addEventListener('blur', validateFirstName);
-	document.getElementById('lastname').addEventListener('blur', validateLastName);
+	document.getElementById('firstname').addEventListener('blur',
+			validateFirstName);
+	document.getElementById('lastname').addEventListener('blur',
+			validateLastName);
 	document.getElementById('createAccBtn').addEventListener('click',
 			validateCreateAccount);
 }
@@ -95,15 +97,15 @@ function loadCreateAccount() {
 }
 
 function createAccount() {
-	
+
 	let roleId = 0;
-	
-	if(document.getElementById('admin_key').value === 'Waffles'){
+
+	if (document.getElementById('admin_key').value === 'Waffles') {
 		roleId = 1;
-	} else{
+	} else {
 		roleId = 2;
-		}
-	
+	}
+
 	let user = {
 		id : 0,
 		username : document.getElementById('username').value,
@@ -145,34 +147,33 @@ function validateCreateAccount() {
 	} else {
 		alert('Please enter all valid fields!');
 	}
-if(validatedFirstName && validatedLastName){
-	if (!validatedUsername && !validatedEmail) {
-		alert('Username and Email are already taken. Please try another.')
-		document.getElementById('username').innerText = '';
-		document.getElementById('email').innerText = '';
-	} else if (!validatedUsername) {
-		alert('Username is already taken. Please try another.');
-		document.getElementById('username').innerText = '';
-		document.getElementById('username').focus();
-	} else if (!validatedEmail || !validEmail) {
-		alert('Email is already taken or invalid. Please try another.');
-		document.getElementById('email').innerText = '';
-		document.getElementById('email').focus();
+	if (validatedFirstName && validatedLastName) {
+		if (!validatedUsername && !validatedEmail) {
+			alert('Username and Email are already taken. Please try another.')
+			document.getElementById('username').innerText = '';
+			document.getElementById('email').innerText = '';
+		} else if (!validatedUsername) {
+			alert('Username is already taken. Please try another.');
+			document.getElementById('username').innerText = '';
+			document.getElementById('username').focus();
+		} else if (!validatedEmail || !validEmail) {
+			alert('Email is already taken or invalid. Please try another.');
+			document.getElementById('email').innerText = '';
+			document.getElementById('email').focus();
+		} else {
+			createAccount();
+		}
 	} else {
-		createAccount();
+		alert('First name or last name may not include special characters or be longer than 100 characters!');
+		document.getElementById('firstname').innerText = ' ';
+		document.getElementById('lastname').innerText = ' ';
+		if (!validatedFirstName) {
+			document.getElementById('firstname').focus();
+		} else {
+			document.getElemenyById('lastname').focus();
+		}
+
 	}
-} else{
-	alert('First name or last name may not include special characters or be longer than 100 characters!');
-	 document.getElementById('firstname').innerText = ' ';
-	 document.getElementById('lastname').innerText = ' ';
-	 if(!validatedFirstName){
-		 document.getElementById('firstname').focus();
-	 }else
-		 {
-		 	document.getElemenyById('lastname').focus();
-		 }
-	
-}
 
 	function validateEmail(email) {
 		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -352,7 +353,8 @@ function loadUserTable() {
 				}
 
 				ticketTable.row.add(
-						[ allTicketsJSON.id,'$' + allTicketsJSON.amount.toFixed(2),
+						[ allTicketsJSON.id,
+								'$' + allTicketsJSON.amount.toFixed(2),
 								allTicketsJSON.submitted,
 								allTicketsJSON.resolved, allTicketsJSON.desc,
 								allTicketsJSON.author_id,
@@ -414,7 +416,6 @@ function loadCreateNewTicket() {
 	console.log('In createNewTicket()')
 	document.getElementById('addTicket').addEventListener('click',
 			createNewTicket);
-	document.getElementById('logout').addEventListener('click', logout);
 	document.getElementById('nav_logout').addEventListener('click', logout);
 }
 
@@ -428,24 +429,22 @@ function createNewTicket() {
 			JSON.parse(user).id ];
 
 	console.log(document.getElementById('amount').value);
-	
+
 	let validatedAmount = validateAmount(newTicket[0]);
-	
+
 	if (!newTicket[0] || !newTicket[1]) {
 		alert("Please enter all fields!")
 		return false;
 		loadNewTicket();
-	}
-	else if (isNaN(newTicket[0]) || !validatedAmount) {
+	} else if (isNaN(newTicket[0]) || !validatedAmount) {
 		alert("Please enter only a valid dollar amount");
 		document.getElementById('amount').value = '';
 		document.getElementById('amount').focus();
 		loadNewTicket();
-	}
-	else if (newTicket[0] <= 0){
+	} else if (newTicket[0] <= 0) {
 		alert("Amount must be greater than $0.00!");
 		loadNewTicket();
-	}else{
+	} else {
 		let xhr = new XMLHttpRequest();
 
 		// Open xhr request
@@ -454,16 +453,36 @@ function createNewTicket() {
 		// Send the request
 		xhr.send(newTicketJSON);
 
-		// Wait for the response then perform this action when response is received
+		// Wait for the response then perform this action when response is
+		// received
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState == 4 && xhr.status == 200) {
-				window.localStorage.setItem('ticket', JSON.stringify(xhr.responseText));
-				loadUserLogin();
+				let ticketView = xhr.responseText;
+				// Open xhr request
+				xhr.open('GET', 'nav_loggedIn.view', true);
+
+				// Send the request
+				xhr.send();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == 4 && xhr.status == 200) {
+						document.getElementById('view').innerHTML = ticketView
+						let navView = document.getElementById('nav_view');
+						navView.innerHTML = xhr.responseText;
+						document.getElementById('personName').innerText = 'Hi, '
+								+ JSON.parse(window.localStorage
+										.getItem('user')).firstname
+								+ ' '
+								+ JSON.parse(window.localStorage
+										.getItem('user')).lastname + '!';
+						window.localStorage.setItem('ticket', JSON
+								.stringify(xhr.responseText));
+						loadUserLogin();
+					}
+				}
 			}
 		}
 	}
-	
-	
+
 	function validateAmount(amount) {
 		var re = /^\$?[0-9]+\.?[0-9]?[0-9]?$/;
 		return re.test(String(amount));
@@ -581,7 +600,8 @@ function loadAdminTable() {
 				}
 
 				ticketTable.row.add(
-						[ allTicketsJSON.id, '$' + allTicketsJSON.amount.toFixed(2),
+						[ allTicketsJSON.id,
+								'$' + allTicketsJSON.amount.toFixed(2),
 								allTicketsJSON.submitted,
 								allTicketsJSON.resolved, allTicketsJSON.desc,
 								allTicketsJSON.author_id,
@@ -767,7 +787,6 @@ function validateLastName() {
 		}
 	}
 }
-
 
 function logout() {
 	console.log('In logout()');

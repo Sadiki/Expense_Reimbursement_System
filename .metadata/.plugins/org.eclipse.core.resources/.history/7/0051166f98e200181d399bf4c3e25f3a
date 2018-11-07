@@ -1,7 +1,8 @@
 // Global Variable
 let validatedUsername;
 let validatedEmail;
-let validatedName;
+let validatedFirstName;
+let validatedLastName;
 
 window.onload = function() {
 	let currUserJSON = this.localStorage.getItem('user');
@@ -14,6 +15,8 @@ window.onload = function() {
 	} else {
 		loadHome();
 	}
+	
+	document.getElementById('company_name').addEventListener('click', loadHome);
 
 }
 
@@ -68,8 +71,8 @@ function loadCreateAccountInfo() {
 	document.getElementById('email').addEventListener('blur', validateEmail);
 	document.getElementById('username').addEventListener('blur',
 			validateUsername);
-	document.getElementById('firstname').addEventListener('blur', validateName);
-	document.getElementById('lastname').addEventListener('blur', validateName);
+	document.getElementById('firstname').addEventListener('blur', validateFirstName);
+	document.getElementById('lastname').addEventListener('blur', validateLastName);
 	document.getElementById('createAccBtn').addEventListener('click',
 			validateCreateAccount);
 }
@@ -142,7 +145,7 @@ function validateCreateAccount() {
 	} else {
 		alert('Please enter all valid fields!');
 	}
-if(validatedName){
+if(validatedFirstName && validatedLastName){
 	if (!validatedUsername && !validatedEmail) {
 		alert('Username and Email are already taken. Please try another.')
 		document.getElementById('username').innerText = '';
@@ -162,7 +165,13 @@ if(validatedName){
 	alert('First name or last name may not include special characters or be longer than 100 characters!');
 	 document.getElementById('firstname').innerText = ' ';
 	 document.getElementById('lastname').innerText = ' ';
-	 document.getElementById('firstname').focus();
+	 if(!validatedFirstName){
+		 document.getElementById('firstname').focus();
+	 }else
+		 {
+		 	document.getElemenyById('lastname').focus();
+		 }
+	
 }
 
 	function validateEmail(email) {
@@ -343,7 +352,7 @@ function loadUserTable() {
 				}
 
 				ticketTable.row.add(
-						[ allTicketsJSON.id, allTicketsJSON.amount,
+						[ allTicketsJSON.id,'$' + allTicketsJSON.amount.toFixed(2),
 								allTicketsJSON.submitted,
 								allTicketsJSON.resolved, allTicketsJSON.desc,
 								allTicketsJSON.author_id,
@@ -418,32 +427,64 @@ function createNewTicket() {
 			document.getElementById('type').selectedIndex + 1,
 			JSON.parse(user).id ];
 
+	console.log(document.getElementById('amount').value);
+	
+	let validatedAmount = validateAmount(newTicket[0]);
+	
 	if (!newTicket[0] || !newTicket[1]) {
 		alert("Please enter all fields!")
 		return false;
 		loadNewTicket();
 	}
-	if (isNaN(newTicket[0]) || newTicket[0] <= 0) {
+	else if (isNaN(newTicket[0]) || !validatedAmount) {
 		alert("Please enter only a valid dollar amount");
-		return false;
+		document.getElementById('amount').value = '';
+		document.getElementById('amount').focus();
 		loadNewTicket();
 	}
-	let xhr = new XMLHttpRequest();
+	else if (newTicket[0] <= 0){
+		alert("Amount must be greater than $0.00!");
+		loadNewTicket();
+	}else{
+		let xhr = new XMLHttpRequest();
 
-	// Open xhr request
-	xhr.open('POST', 'new_ticket', true);
-	let newTicketJSON = JSON.stringify(newTicket);
-	// Send the request
-	xhr.send(newTicketJSON);
+		// Open xhr request
+		xhr.open('POST', 'new_ticket', true);
+		let newTicketJSON = JSON.stringify(newTicket);
+		// Send the request
+		xhr.send(newTicketJSON);
 
-	// Wait for the response then perform this action when response is received
-	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-			window.localStorage.setItem('ticket', JSON
-					.stringify(xhr.responseText));
-			console.log(xhr.responseText)
-			loadUserLogin();
+		// Wait for the response then perform this action when response is
+		// received
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				let ticketView = xhr.responseText;
+				// Open xhr request
+				xhr.open('GET', 'nav_loggedIn.view', true);
+
+				// Send the request
+				xhr.send();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == 4 && xhr.status == 200) {
+						document.getElementById('view').innerHTML = ticketView
+						let navView = document.getElementById('nav_view');
+						navView.innerHTML = xhr.responseText;
+						document.getElementById('personName').innerText = 'Hi, '
+								+ JSON.parse(window.localStorage.getItem('user')).firstname
+								+ ' '
+								+ JSON.parse(window.localStorage.getItem('user')).lastname
+								+ '!';
+				window.localStorage.setItem('ticket', JSON.stringify(xhr.responseText));
+				loadUserLogin();
+			}
+				}
 		}
+	}
+	
+	
+	function validateAmount(amount) {
+		var re = /^\$?[0-9]+\.?[0-9]?[0-9]?$/;
+		return re.test(String(amount));
 	}
 }
 
@@ -558,7 +599,7 @@ function loadAdminTable() {
 				}
 
 				ticketTable.row.add(
-						[ allTicketsJSON.id, allTicketsJSON.amount,
+						[ allTicketsJSON.id, '$' + allTicketsJSON.amount.toFixed(2),
 								allTicketsJSON.submitted,
 								allTicketsJSON.resolved, allTicketsJSON.desc,
 								allTicketsJSON.author_id,
@@ -646,7 +687,7 @@ function validateUsername() {
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			let username = JSON.parse(xhr.responseText);
-			if (!username || !username === '') {
+			if (!username && !(username === '')) {
 				document.getElementById('createAcc-mess').style.display = 'block';
 				document.getElementById('createAcc-mess').innerText = 'Sorry, username is already in use. Please try another.';
 				validatedUsername = false;
@@ -673,7 +714,7 @@ function validateEmail() {
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			let email = JSON.parse(xhr.responseText);
-			if (!email || !email === '') {
+			if (!email && !(email === '')) {
 				console.log(email)
 				document.getElementById('createAcc-mess').style.display = 'block';
 				document.getElementById('createAcc-mess').innerText = 'Sorry, email is already in use. Please try another.';
@@ -685,7 +726,7 @@ function validateEmail() {
 	}
 }
 
-function validateName() {
+function validateFirstName() {
 	console.log('In validateName()');
 
 	let fullName = [ document.getElementById('firstname').value,
@@ -705,15 +746,46 @@ function validateName() {
 			if (!name) {
 				console.log(name);
 				document.getElementById('createAcc-mess').style.display = 'block';
-				document.getElementById('createAcc-mess').innerText = 'Sorry, email is already in use. Please try another.';
-				validatedName = false;
+				document.getElementById('createAcc-mess').innerText = 'Please enter a valid full name.';
+				validatedFirstName = false;
 			} else {
-				validatedName = true;
+				validatedFirstName = true;
 			}
 
 		}
 	}
 }
+
+function validateLastName() {
+	console.log('In validateName()');
+
+	let fullName = [ document.getElementById('firstname').value,
+			document.getElementById('lastname').value ]
+	let fullNameJSON = JSON.stringify(fullName);
+
+	let xhr = new XMLHttpRequest();
+	// Open xhr request
+	xhr.open('POST', 'name.validate', true);
+	xhr.setRequestHeader('Content-type', 'application/json');
+	// Send the request
+	xhr.send(fullNameJSON);
+	// Wait for the response then perform this action when response is received
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			let name = JSON.parse(xhr.responseText);
+			if (!name) {
+				console.log(name);
+				document.getElementById('createAcc-mess').style.display = 'block';
+				document.getElementById('createAcc-mess').innerText = 'Please enter a valid full name.';
+				validatedLastName = false;
+			} else {
+				validatedLastName = true;
+			}
+
+		}
+	}
+}
+
 
 function logout() {
 	console.log('In logout()');
